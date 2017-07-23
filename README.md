@@ -53,18 +53,17 @@ https://github.com/missive/functional-components-benchmark
 
 4.component 尽量就是一个render（see also： prefer-stateless-function）
 
-
-
-
-
-7. 不要写for 这种命令式的代码
+5. 不要写for 这种命令式的代码
 
 
 
 # 一些准则
 1. import 中间   外部函数库和 内部库， 样式  组件 。以及 action 等分组（中间空一行，并在上方加行注释）
+
 2. 函数内部  正常逻辑  和 异常逻辑中间空一行。 先异常return  然后正常逻辑。 变量声明和其他内容空一行
+
 3. 尽量不要给变量命名，因为要命名你就要想一个reasonable 的 名字。
+
 4. think before coding。 写代码前注释写下你的想法。
 
 想好外部依赖，分析好组件划分，划分好函数功能块以及是否可以通用。 正常逻辑是怎样，异常逻辑是怎样。 处理不了的意外输入是否明确抛出。
