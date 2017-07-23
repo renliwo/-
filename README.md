@@ -27,11 +27,28 @@
 后端接口，我们统一放到action中处理，这样有一个集中处理和查看的地方，不好的地方在于频繁切换文件，打断思路。
 dispatch通过外部注入，我们可以在任意地方调用dispacth 发送action 进而改变store。
 
+### 本地db
+本地db的操作都封装在了utils/db.js . 但是这个过程是不纯粹的，它永远是一个噩梦，你永远无法保证他是正常可用的。可以将db操作封装到高阶函数中
+减少被噩梦惊醒的风险🤦‍。
+
+### 用户操作
+
+用户有哪些操作，正常异常操作是否考虑周全。是否对异常操作进行了处理。
+
+### 其他库
+
+外部库选择上我们通常会选择使用人数多，维护好，更新频繁的库，这种库有保障，使用质量地下的库，会带来很多隐患，这种需要引入外部库的
+是否小心谨慎。
+另一方面，版本变更有时候会到处功能异常，这种可以通过锁定版本的方式降低风险。
+
+
 参考：
 
 https://github.com/acdlite/redux-promise
 
 https://github.com/acdlite/redux-actions
+
+https://www.zhihu.com/question/36431501/answer/67560434
 
 ## 视图
 视图就应该有视图的样子。视图应该保证他的纯粹性。 什么意思呢？ 就是说尽可能纯粹。给定外部依赖，输出页面是一致的，给定操作（操作也是一种外部依赖），
@@ -53,8 +70,9 @@ https://github.com/missive/functional-components-benchmark
 
 4.component 尽量就是一个render（see also： prefer-stateless-function）
 
-5. 不要写for 这种命令式的代码
+5. 不要写for 这种命令式的代码（see alse： functional-programing）
 
+6. eslint 尽量不要留warning（1.墨菲定律）（2.牺牲代码质量换取的结果，通常是得不偿失）
 
 
 # 一些准则
