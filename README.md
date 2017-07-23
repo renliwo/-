@@ -60,6 +60,21 @@ https://stackoverflow.com/questions/37793936/eslint-react-with-airbnb
 
 https://github.com/missive/functional-components-benchmark
 
+# 代码风格
+
+良好的代码风格体现了一个人的信仰，风度，甚至态度。
+遵循一定的业界标准是很重要的，代码风格尽量不要特立独行。
+写出易读易理解很困难，不然我们也不会都骂前任的代码。
+为了我们不被接手的人骂，我们应该多注意下自己的代码风格。
+
+参考：
+
+https://github.com/airbnb/javascript
+
+http://google.github.io/styleguide/jsguide.html
+
+https://github.com/prettier/prettier
+
 # 基本原则
 
 1.尽量不要手动bind
