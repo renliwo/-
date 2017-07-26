@@ -75,6 +75,57 @@ http://google.github.io/styleguide/jsguide.html
 
 https://github.com/prettier/prettier
 
+# git 工作流
+目前比较推荐的工作流程（workflow）是这样的：
+
+```
+Make changes
+Commit those changes
+Make sure Travis turns green
+Bump version in package.json
+conventionalChangelog
+Commit package.json and CHANGELOG.md files
+Tag
+Push
+```
+
+下面是钉钉具体项目的开发步骤：
+
+```
+1、git clone xxxxxx
+2、从master建立一个本地分支 `git checkout -b daily/xxx`【xxx比当前publish/0.0.2下的版本号大，比如0.0.3】
+3、修改完之后添加/提交 `git add -A /git commit -m '修改日志'`
+4、推送到远程分支 `git push origin daily/xxx`
+5、打tag版本跟daily版本一致   `git tag publish/xxx`
+6、将daily/xxx推送到publish/xxx  `git push origin pubish/xxx`
+7、这个时候已经将资源发布到cdn上了，检查内容是否发布成功https://g.alicdn.com/dingding/项目名/xxx/index.css
+8、资源发布成功后，下次开发需要更新下master，再继续上面的步骤
+9、修改diamond配置http://diamond.alibaba-inc.com/diamond-ops/static/pages/config/index.html?serverId=pre&=undefined
+```
+
+关于commit 方面，业界比较流行的做法是angular 的  [AngularJS Git Commit Message Conventions](https://gist.github.com/stephenparish/9941e89d80e2bc58a153)
+目前mobile端的规范就是遵循的上述规范，这里有具体的介绍。 目前我在项目中使用的是[conventional-changelog](https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-commitizen)这个 vscode
+的插件来规范提交的。如果大家使用的不是vscode，可以自行搜索应用市场下载，如果没有的化，可以使用[cli 工具](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-cli)继承
+
+> 目前项目中并没有添加强制使用angular风格提交的hooks。计划大家都理解习惯之后再添加。
+
+# 关于文档
+
+## README
+文档一律采用markdown 来写。 项目总体介绍在根目录下的README.md  
+大家可以自行在自己的模块下添加README
+
+## CHANGELOG
+
+关于changelog， 目前的做法是直接根据conventional commit message 生成。如果看来，规范的commit message 还是
+很有必要的，大家加油。一个版本完成之后，执行：
+
+```js
+npm run changelog
+``` 
+系统会自动根据semver生成增量的changelog信息。 如此看来，语义化版本还是很重要的。
+好在项目版本是semver
+
 # 基本原则
 
 1.尽量不要手动bind
