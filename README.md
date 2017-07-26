@@ -75,6 +75,9 @@ http://google.github.io/styleguide/jsguide.html
 
 https://github.com/prettier/prettier
 
+上面是对普通的js语法进行讲解的最佳实践。针对react的最佳实践[可参考](https://github.com/renliwo/react-best-practice)。
+
+
 # git 工作流
 目前比较推荐的工作流程（workflow）是这样的：
 
