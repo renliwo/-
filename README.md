@@ -66,6 +66,7 @@ https://github.com/missive/functional-components-benchmark
 遵循一定的业界标准是很重要的，代码风格尽量不要特立独行。
 写出易读易理解很困难，不然我们也不会都骂前任的代码。
 为了我们不被接手的人骂，我们应该多注意下自己的代码风格。
+[想看更多？](https://my.oschina.net/wanjubang/blog/1494513)
 
 参考：
 
