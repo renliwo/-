@@ -85,7 +85,7 @@ https://github.com/prettier/prettier
 ```
 Make changes
 Commit those changes
-Make sure Travis turns green
+Make sure your tests pass if exsit
 Bump version in package.json
 conventionalChangelog
 Commit package.json and CHANGELOG.md files
