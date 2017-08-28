@@ -107,6 +107,15 @@ Push
 9、修改diamond配置http://diamond.alibaba-inc.com/diamond-ops/static/pages/config/index.html?serverId=pre&=undefined
 ```
 
+开启新release
+```
+1. 切换到主分支 `git checkout master`
+2. 同步代码 `git pull`
+3. 从master建立一个本地分支 `git checkout -b daily/xxx`【xxx比当前publish/0.0.2下的版本号大，比如0.0.3】
+4. 构建代码 npm run build
+5. 推送分支 git push --set-upstream origin daily/x.x.x
+```
+
 关于commit 方面，业界比较流行的做法是angular 的  [AngularJS Git Commit Message Conventions](https://gist.github.com/stephenparish/9941e89d80e2bc58a153)
 目前mobile端的规范就是遵循的上述规范，这里有具体的介绍。 目前我在项目中使用的是[conventional-changelog](https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-commitizen)这个 vscode
 的插件来规范提交的。如果大家使用的不是vscode，可以自行搜索应用市场下载，如果没有的化，可以使用[cli 工具](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-cli)继承
