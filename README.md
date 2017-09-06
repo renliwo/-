@@ -141,13 +141,13 @@ npm run changelog
 
 # 基本原则
 
-1.尽量不要手动bind
+1. 尽量不要手动bind
 
-2.不要写console代码
+2.  不要写console代码
 
 3. 关键路径加上monitor
 
-4.component 尽量就是一个render（see also： prefer-stateless-function）
+4. component 尽量就是一个render（see also： prefer-stateless-function）
 
 5. 不要写for 这种命令式的代码（see alse： functional-programing）
 
